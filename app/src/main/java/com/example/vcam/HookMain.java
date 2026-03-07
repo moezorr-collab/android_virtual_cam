@@ -669,7 +669,7 @@ public class HookMain implements IXposedHookLoadPackage {
                 need_to_show_toast = !toast_control.exists();
                 if (toast_content != null && need_to_show_toast) {
                     try {
-                        Toast.makeText(toast_content, "应用创建了渲染器：\n宽：" + param.args[0] + "\n高：" + param.args[1] + "\n一般只需要宽高比与视频相同", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(toast_content, "应用创建了渲染器 newInstance：\n宽：" + param.args[0] + "\n高：" + param.args[1] + "\n一般只需要宽高比与视频相同", Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {
                         XposedBridge.log("【VCAM】[toast]" + e.toString());
                     }
@@ -1031,7 +1031,7 @@ public class HookMain implements IXposedHookLoadPackage {
                     need_to_show_toast = !toast_control.exists();
                     if (toast_content != null && need_to_show_toast) {
                         try {
-                            Toast.makeText(toast_content, "发现拍照\n宽：" + onemwidth + "\n高：" + onemhight + "\n格式：JPEG", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(toast_content, "发现拍照 onPictureTaken\n宽：" + onemwidth + "\n高：" + onemhight + "\n格式：JPEG", Toast.LENGTH_SHORT).show();
                         } catch (Exception e) {
                             XposedBridge.log("【VCAM】[toast]" + e.toString());
                         }
@@ -1072,7 +1072,7 @@ public class HookMain implements IXposedHookLoadPackage {
                     need_to_show_toast = !toast_control.exists();
                     if (toast_content != null && need_to_show_toast) {
                         try {
-                            Toast.makeText(toast_content, "发现拍照\n宽：" + onemwidth + "\n高：" + onemhight + "\n格式：YUV_420_888", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(toast_content, "发现拍照 onPictureTaken2\n宽：" + onemwidth + "\n高：" + onemhight + "\n格式：YUV_420_888", Toast.LENGTH_SHORT).show();
                         } catch (Exception ee) {
                             XposedBridge.log("【VCAM】[toast]" + ee.toString());
                         }
@@ -1130,7 +1130,7 @@ public class HookMain implements IXposedHookLoadPackage {
                     need_to_show_toast = !toast_control.exists();
                     if (toast_content != null && need_to_show_toast) {
                         try {
-                            Toast.makeText(toast_content, "发现预览\n宽：" + mwidth + "\n高：" + mhight + "\n" + "需要视频分辨率与其完全相同", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(toast_content, "发现预览 onPreviewFrame\n宽：" + mwidth + "\n高：" + mhight + "\n" + "需要视频分辨率与其完全相同", Toast.LENGTH_SHORT).show();
                         } catch (Exception ee) {
                             XposedBridge.log("【VCAM】[toast]" + ee.toString());
                         }
