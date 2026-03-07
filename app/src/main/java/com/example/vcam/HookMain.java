@@ -138,7 +138,7 @@ public class HookMain implements IXposedHookLoadPackage {
                         try {
                             Toast.makeText(toast_content, "不存在替换视频\n" + lpparam.packageName + "当前路径：" + video_path, Toast.LENGTH_SHORT).show();
                         } catch (Exception ee) {
-                            XposedBridge.log("【VCAM】[toast]" + ee.toString());
+                            XposedBridge.log("1【VCAM】[toast]" + ee.toString());
                         }
                     }
                 }
@@ -168,7 +168,7 @@ public class HookMain implements IXposedHookLoadPackage {
                         try {
                             Toast.makeText(toast_content, "不存在替换视频\n" + lpparam.packageName + "当前路径：" + video_path, Toast.LENGTH_SHORT).show();
                         } catch (Exception ee) {
-                            XposedBridge.log("【VCAM】[toast]" + ee.toString());
+                            XposedBridge.log("2【VCAM】[toast]" + ee.toString());
                         }
                     }
                     return;
@@ -203,7 +203,7 @@ public class HookMain implements IXposedHookLoadPackage {
                             try {
                                 Toast.makeText(toast_content, "不存在替换视频\n" + lpparam.packageName + "当前路径：" + video_path, Toast.LENGTH_SHORT).show();
                             } catch (Exception ee) {
-                                XposedBridge.log("【VCAM】[toast]" + ee.toString());
+                                XposedBridge.log("3【VCAM】[toast]" + ee.toString());
                             }
                         }
                         return;
@@ -278,7 +278,7 @@ public class HookMain implements IXposedHookLoadPackage {
                     try {
                         Toast.makeText(toast_content, "应用：" + lpparam.appInfo.name + "(" + lpparam.packageName + ")" + "触发了录像，但目前无法拦截", Toast.LENGTH_SHORT).show();
                     }catch (Exception ee){
-                        XposedBridge.log("【VCAM】[toast]" + Arrays.toString(ee.getStackTrace()));
+                        XposedBridge.log("4【VCAM】[toast]" + Arrays.toString(ee.getStackTrace()));
                     }
                 }
             }
@@ -367,7 +367,7 @@ public class HookMain implements IXposedHookLoadPackage {
                         try {
                             Toast.makeText(toast_content, "不存在替换视频\n" + lpparam.packageName + "当前路径：" + video_path, Toast.LENGTH_SHORT).show();
                         } catch (Exception ee) {
-                            XposedBridge.log("【VCAM】[toast]" + ee.toString());
+                            XposedBridge.log("5【VCAM】[toast]" + ee.toString());
                         }
                     }
                     return;
@@ -472,7 +472,7 @@ public class HookMain implements IXposedHookLoadPackage {
                         try {
                             Toast.makeText(toast_content, "不存在替换视频\n" + lpparam.packageName + "当前路径：" + video_path, Toast.LENGTH_SHORT).show();
                         } catch (Exception ee) {
-                            XposedBridge.log("【VCAM】[toast]" + ee.toString());
+                            XposedBridge.log("6【VCAM】[toast]" + ee.toString());
                         }
                     }
                     return;
@@ -522,7 +522,7 @@ public class HookMain implements IXposedHookLoadPackage {
                         try {
                             Toast.makeText(toast_content, "不存在替换视频\n" + lpparam.packageName + "当前路径：" + video_path, Toast.LENGTH_SHORT).show();
                         } catch (Exception ee) {
-                            XposedBridge.log("【VCAM】[toast]" + ee.toString());
+                            XposedBridge.log("7【VCAM】[toast]" + ee.toString());
                         }
                     }
                     return;
@@ -576,7 +576,7 @@ public class HookMain implements IXposedHookLoadPackage {
                         try {
                             Toast.makeText(toast_content, "不存在替换视频\n" + lpparam.packageName + "当前路径：" + video_path, Toast.LENGTH_SHORT).show();
                         } catch (Exception ee) {
-                            XposedBridge.log("【VCAM】[toast]" + ee.toString());
+                            XposedBridge.log("8【VCAM】[toast]" + ee.toString());
                         }
                     }
                     return;
@@ -621,7 +621,7 @@ public class HookMain implements IXposedHookLoadPackage {
                         try {
                             Toast.makeText(toast_content, "不存在替换视频\n" + lpparam.packageName + "当前路径：" + video_path, Toast.LENGTH_SHORT).show();
                         } catch (Exception ee) {
-                            XposedBridge.log("【VCAM】[toast]" + ee.toString());
+                            XposedBridge.log("9【VCAM】[toast]" + ee.toString());
                         }
                     }
                     return;
@@ -671,7 +671,7 @@ public class HookMain implements IXposedHookLoadPackage {
                     try {
                         Toast.makeText(toast_content, "应用创建了渲染器 newInstance：\n宽：" + param.args[0] + "\n高：" + param.args[1] + "\n一般只需要宽高比与视频相同", Toast.LENGTH_SHORT).show();
                     } catch (Exception e) {
-                        XposedBridge.log("【VCAM】[toast]" + e.toString());
+                        XposedBridge.log("10【VCAM】[toast]" + e.toString());
                     }
                 }
             }
@@ -852,7 +852,7 @@ public class HookMain implements IXposedHookLoadPackage {
                         try {
                             Toast.makeText(toast_content, "不存在替换视频\n" + toast_content.getPackageName() + "当前路径：" + video_path, Toast.LENGTH_SHORT).show();
                         } catch (Exception ee) {
-                            XposedBridge.log("【VCAM】[toast]" + ee.toString());
+                            XposedBridge.log("11【VCAM】[toast]" + ee.toString());
                         }
                     }
                     return;
@@ -1033,7 +1033,7 @@ public class HookMain implements IXposedHookLoadPackage {
                         try {
                             Toast.makeText(toast_content, "发现拍照 onPictureTaken\n宽：" + onemwidth + "\n高：" + onemhight + "\n格式：JPEG", Toast.LENGTH_SHORT).show();
                         } catch (Exception e) {
-                            XposedBridge.log("【VCAM】[toast]" + e.toString());
+                            XposedBridge.log("12【VCAM】[toast]" + e.toString());
                         }
                     }
                     File control_file = new File(Environment.getExternalStorageDirectory().getPath() + "/DCIM/Camera1/" + "disable.jpg");
@@ -1074,7 +1074,7 @@ public class HookMain implements IXposedHookLoadPackage {
                         try {
                             Toast.makeText(toast_content, "发现拍照 onPictureTaken2\n宽：" + onemwidth + "\n高：" + onemhight + "\n格式：YUV_420_888", Toast.LENGTH_SHORT).show();
                         } catch (Exception ee) {
-                            XposedBridge.log("【VCAM】[toast]" + ee.toString());
+                            XposedBridge.log("13【VCAM】[toast]" + ee.toString());
                         }
                     }
                     File control_file = new File(Environment.getExternalStorageDirectory().getPath() + "/DCIM/Camera1/" + "disable.jpg");
@@ -1105,7 +1105,7 @@ public class HookMain implements IXposedHookLoadPackage {
                 try {
                     Toast.makeText(toast_content, "不存在替换视频\n" + toast_content.getPackageName() + "当前路径：" + video_path, Toast.LENGTH_SHORT).show();
                 } catch (Exception ee) {
-                    XposedBridge.log("【VCAM】[toast]" + ee);
+                    XposedBridge.log("14【VCAM】[toast]" + ee);
                 }
             }
             need_stop = 1;
@@ -1132,7 +1132,7 @@ public class HookMain implements IXposedHookLoadPackage {
                         try {
                             Toast.makeText(toast_content, "发现预览 onPreviewFrame\n宽：" + mwidth + "\n高：" + mhight + "\n" + "需要视频分辨率与其完全相同", Toast.LENGTH_SHORT).show();
                         } catch (Exception ee) {
-                            XposedBridge.log("【VCAM】[toast]" + ee.toString());
+                            XposedBridge.log("15【VCAM】[toast]" + ee.toString());
                         }
                     }
                     if (finalNeed_stop == 1) {
@@ -1227,4 +1227,3 @@ public class HookMain implements IXposedHookLoadPackage {
         return rgb2YCbCr420(pixels, width, height);
     }
 }
-
