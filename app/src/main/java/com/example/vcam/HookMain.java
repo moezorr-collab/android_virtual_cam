@@ -201,7 +201,7 @@ public class HookMain implements IXposedHookLoadPackage {
                     if (!file.exists()) {
                         if (toast_content != null && need_to_show_toast) {
                             try {
-                                Toast.makeText(toast_content, "不存在替换视频\n" + lpparam.packageName + "当前路径：" + video_path, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(toast_content, "不存在替换视频\n" + lpparam.packageName + "当前路径：" , Toast.LENGTH_SHORT).show();
                             } catch (Exception ee) {
                                 XposedBridge.log("3【VCAM】[toast]" + ee.toString());
                             }
@@ -520,7 +520,7 @@ public class HookMain implements IXposedHookLoadPackage {
                 if (!file.exists()) {
                     if (toast_content != null && need_to_show_toast) {
                         try {
-                            Toast.makeText(toast_content, "不存在替换视频\n" + lpparam.packageName + "当前路径：" + video_path, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(toast_content, "不存在替换视频\n" + lpparam.packageName + "当前路径：" , Toast.LENGTH_SHORT).show();
                         } catch (Exception ee) {
                             XposedBridge.log("7【VCAM】[toast]" + ee.toString());
                         }
@@ -619,7 +619,7 @@ public class HookMain implements IXposedHookLoadPackage {
                 if (!file.exists() && need_to_show_toast) {
                     if (toast_content != null) {
                         try {
-                            Toast.makeText(toast_content, "不存在替换视频\n" + lpparam.packageName + "当前路径：" + video_path, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(toast_content, "不存在替换视频\n" + lpparam.packageName + "当前路径：" , Toast.LENGTH_SHORT).show();
                         } catch (Exception ee) {
                             XposedBridge.log("9【VCAM】[toast]" + ee.toString());
                         }
