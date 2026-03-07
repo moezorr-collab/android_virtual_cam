@@ -28,7 +28,7 @@
             android:value="true" />
         <meta-data
             android:name="xposeddescription"
-            android:value="安卓虚拟摄像头" />
+            android:value="Modifed" />
         <meta-data
             android:name="xposedminversion"
             android:value="51" />
