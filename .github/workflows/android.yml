@@ -2,25 +2,37 @@ name: Android CI
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ master, main ]
   pull_request:
-    branches: [ $default-branch ]
+    branches: [ master, main ]
+  workflow_dispatch: # Allows manual trigger from the Actions tab
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: set up JDK 11
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up JDK
       uses: actions/setup-java@v4
       with:
-        java-version: '11'
         distribution: 'temurin'
-        cache: gradle
+        java-version: '17' # Use an appropriate JDK version for your project
 
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
+    - name: Grant execute permission to gradlew
+      run: chmod +x ./gradlew
+
+    - name: Build debug APK
+      run: ./gradlew assembleDebug
+
+    - name: Upload debug APK artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: app-debug-apk
+        path: app/build/outputs/apk/debug/app-debug.apk
+
+    # Optional: Add steps for running tests (lint, unit tests) before building
+    # - name: Run tests
+    #   run: ./gradlew test
