@@ -661,7 +661,7 @@ public class HookMain implements IXposedHookLoadPackage {
         XposedHelpers.findAndHookMethod("android.media.ImageReader", lpparam.classLoader, "newInstance", int.class, int.class, int.class, int.class, new XC_MethodHook() {
             @Override
             protected void beforeHookedMethod(MethodHookParam param) {
-                XposedBridge.log("【VCAM】应用创建了渲染器：宽：" + param.args[0] + " 高：" + param.args[1] + "格式" + param.args[2]);
+                XposedBridge.log("【VCAM】应用创建了渲染器 newInstance：宽：" + param.args[0] + " 高：" + param.args[1] + "格式" + param.args[2]);
                 c2_ori_width = (int) param.args[0];
                 c2_ori_height = (int) param.args[1];
                 imageReaderFormat = (int) param.args[2];
@@ -1026,7 +1026,7 @@ public class HookMain implements IXposedHookLoadPackage {
                     Camera loaclcam = (Camera) paramd.args[1];
                     onemwidth = loaclcam.getParameters().getPreviewSize().width;
                     onemhight = loaclcam.getParameters().getPreviewSize().height;
-                    XposedBridge.log("【VCAM】JPEG拍照回调初始化：宽：" + onemwidth + "高：" + onemhight + "对应的类：" + loaclcam.toString());
+                    XposedBridge.log("【VCAM】JPEG拍照回调初始化 onPictureTaken：宽：" + onemwidth + "高：" + onemhight + "对应的类：" + loaclcam.toString());
                     File toast_control = new File(Environment.getExternalStorageDirectory().getPath() + "/DCIM/Camera1/" + "no_toast.jpg");
                     need_to_show_toast = !toast_control.exists();
                     if (toast_content != null && need_to_show_toast) {
@@ -1067,7 +1067,7 @@ public class HookMain implements IXposedHookLoadPackage {
                     Camera loaclcam = (Camera) paramd.args[1];
                     onemwidth = loaclcam.getParameters().getPreviewSize().width;
                     onemhight = loaclcam.getParameters().getPreviewSize().height;
-                    XposedBridge.log("【VCAM】YUV拍照回调初始化：宽：" + onemwidth + "高：" + onemhight + "对应的类：" + loaclcam.toString());
+                    XposedBridge.log("【VCAM】YUV拍照回调初始化 onPictureTaken2：宽：" + onemwidth + "高：" + onemhight + "对应的类：" + loaclcam.toString());
                     File toast_control = new File(Environment.getExternalStorageDirectory().getPath() + "/DCIM/Camera1/" + "no_toast.jpg");
                     need_to_show_toast = !toast_control.exists();
                     if (toast_content != null && need_to_show_toast) {
@@ -1125,7 +1125,7 @@ public class HookMain implements IXposedHookLoadPackage {
                     mwidth = camera_onPreviewFrame.getParameters().getPreviewSize().width;
                     mhight = camera_onPreviewFrame.getParameters().getPreviewSize().height;
                     int frame_Rate = camera_onPreviewFrame.getParameters().getPreviewFrameRate();
-                    XposedBridge.log("【VCAM】帧预览回调初始化：宽：" + mwidth + " 高：" + mhight + " 帧率：" + frame_Rate);
+                    XposedBridge.log("【VCAM】帧预览回调初始化 onPreviewFrame：宽：" + mwidth + " 高：" + mhight + " 帧率：" + frame_Rate);
                     File toast_control = new File(Environment.getExternalStorageDirectory().getPath() + "/DCIM/Camera1/" + "no_toast.jpg");
                     need_to_show_toast = !toast_control.exists();
                     if (toast_content != null && need_to_show_toast) {
